@@ -3,18 +3,38 @@ void setup(){
   size(600, 400); 
   background(255,255,255);
 
-  var textX = random(50, 550);
-  var textY = random(50, 350);
-  var yourName = "Your Name";
+  frameRate(15)
 
-  fill(241,9,55);
-  textSize(40);
-  text("Hiiii, " + yourName, textX, textY);
+
 }
 
 //🟢Draw Function - Runs on Repeat
 draw = function(){  
 
+if (mousePressed){
+drawName();
+};
+};
+
+
+
+var drawName = function(){
+  
+  var textX = random(-40, 600);
+  var textY = random(-40, 600);
+  
+  fill(random(0,255),random(0,255),random(0,255));
+  textSize(random(1,500));
+  text("Hiiii, Jet ;p ", textX, textY);
+};
+
+var drawFace = function(){
+  fill(0)
+  var faceSize = random(50,100);
+  var faceX = mouseX + random(-12,12);
+  var faceY = mouseY + random(-12,12);
+  textSize(faceSize);
+  text("ꉂ(˵˃ ᗜ ˂˵)",faceX, faceY);
 };
 
 //🟡Extra FUN Features Ms. Hall Added
@@ -35,6 +55,6 @@ mouseClicked = function(){
   console.log(myText);
 
   drawStar();
-  drawStar();
-  drawStar();
+ 
+  drawFace();
 };
